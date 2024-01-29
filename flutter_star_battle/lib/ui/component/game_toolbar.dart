@@ -37,6 +37,11 @@ class _GameToolBarState extends State<GameToolBar> {
             children: [
               const Spacer(),
               _buildCircleWidget(Text(
+                '${(Global.player.time ~/ 60).toString().padLeft(2,'0')}:${(Global.player.time % 60).toString().padLeft(2,'0')}',
+                style: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13),
+              )),
+              _buildCircleWidget(Text(
                 Global.player.score.toString(),
                 style: const TextStyle(
                     color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
@@ -52,6 +57,7 @@ class _GameToolBarState extends State<GameToolBar> {
                         : Icons.pause_rounded,
                     color: Colors.white,
                   ))),
+
               _buildCircleWidget(Stack(
                 alignment: Alignment.center,
                 children: [

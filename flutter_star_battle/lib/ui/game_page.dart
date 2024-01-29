@@ -178,8 +178,7 @@ class _GamePageState extends State<GamePage> with TickerProviderStateMixin {
           .isCollision(Offset(e.x, e.y), Global.shipSize, Global.shipSize));
       var isCollisionAeroLite = aeroLites.any((e) => Global.player.isCollision(
           Offset(e.x, e.y), Global.aeroLiteSize, Global.aeroLiteSize));
-      var isCollisionEnemyRay = enemyRays.any((e) => Global.player
-          .isCollision(Offset(e.x, e.y), Global.rayWidth, Global.rayHeight));
+      var isCollisionEnemyRay = enemyRays.any((e) => Global.player.isCollision(Offset(e.x, e.y), Global.rayWidth, Global.rayHeight));
 
       if (isCollisionEnemy || isCollisionAeroLite || isCollisionEnemyRay) {
         AudioUtils.playDestroy();
@@ -208,7 +207,6 @@ class _GamePageState extends State<GamePage> with TickerProviderStateMixin {
         enemyList[i].changeImageX();
         if (timer.tick % 5 == 0) enemyList[i].shot(rays);
       }
-
       if (fuelList.isEmpty) {
         fuelList.add(Fuel(size.width, size.height));
       }
@@ -228,6 +226,7 @@ class _GamePageState extends State<GamePage> with TickerProviderStateMixin {
             0));
       }
       Global.player.fuel -= 1;
+      Global.player.time += 1;
       // rays.add(Ray(shopPosition.dx + shopSize / 2 - Global.rayWidth / 2, shopPosition.dy - 20));
     });
   }

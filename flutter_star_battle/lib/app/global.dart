@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_star_battle/model/player.dart';
+import 'package:flutter_star_battle/model/player_ship.dart';
 
 class Global {
   static String instructionTitle = 'How to Play Star Battle.';
@@ -26,7 +26,7 @@ class Global {
   static ValueNotifier<bool> isGameOver = ValueNotifier(false);
   static ValueNotifier<bool> isPause = ValueNotifier(false);
 
-  static var player = Player(-1000, -1000);
+  static var player = PlayerShip(-1000, -1000);
 
   static const fuelSize = 40.0;
 
